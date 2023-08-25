@@ -17,7 +17,7 @@ public class UtilsTest {
         @Test
         void ifTheyAllArePositive() {
             ArrayList<String> numbers = new ArrayList<>() {{
-                add("2");
+                add("2.2");
                 add("5");
                 add("9");
                 add("17");
