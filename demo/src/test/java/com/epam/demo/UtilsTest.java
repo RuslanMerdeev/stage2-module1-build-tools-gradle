@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Utils should")
@@ -27,9 +28,9 @@ public class UtilsTest {
 
             assertTrue(got);
         }
-
     }
 
+    @Nested
     class NotHaveAllPositiveNumbers {
 
         @Test
@@ -43,7 +44,7 @@ public class UtilsTest {
 
             boolean got = Utils.isAllPositiveNumbers(numbers);
 
-            assertTrue(false);
+            assertFalse(got);
         }
 
         @Test
@@ -57,7 +58,18 @@ public class UtilsTest {
 
             boolean got = Utils.isAllPositiveNumbers(numbers);
 
-            assertTrue(false);
+            assertFalse(got);
+        }
+
+        @Test
+        void ifOneOfThemStartsWithZero() {
+            ArrayList<String> numbers = new ArrayList<>() {{
+                add("05");
+            }};
+
+            boolean got = Utils.isAllPositiveNumbers(numbers);
+
+            assertFalse(got);
         }
     }
 }
