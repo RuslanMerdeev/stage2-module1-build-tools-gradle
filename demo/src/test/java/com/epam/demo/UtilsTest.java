@@ -71,5 +71,16 @@ public class UtilsTest {
 
             assertFalse(got);
         }
+
+        @Test
+        void ifOneOfThemIsNull() {
+            ArrayList<String> numbers = new ArrayList<>() {{
+                add(null);
+            }};
+
+            boolean got = Utils.isAllPositiveNumbers(numbers);
+
+            assertFalse(got);
+        }
     }
 }
